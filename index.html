@@ -4,38 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú QR - Fuego Rápido</title>
-    <meta name="description"
-        content="Menú digital de Fuego Rápido. Descubre nuestras deliciosas hamburguesas, perros calientes y más.">
-    <link rel="stylesheet" href="style.css">
+    <title>Fuego Rápido | Experiencia Gastronómica</title>
+    <meta name="description" content="Menú digital premium de Fuego Rápido. Sabores que encienden tus sentidos.">
+    
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
+    
+    <!-- Icons & Libraries -->
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- GSAP for Premium Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
+    <!-- Custom Premium Cursor -->
     <div class="custom-cursor"></div>
-    <div class="background-overlay"></div>
-    
-    <section class="hero-section">
-        <div class="hero-bg-accent"></div>
-        <div class="hero-content">
-            <div class="logo-badge">Premium Experience</div>
-            <h1 class="hero-title">FUEGO<span>RÁPIDO</span></h1>
-            <p class="hero-subtitle">EL ARTE DE LA GASTRONOMÍA VOLCÁNICA</p>
-            <div class="hero-scroll-indicator">
-                <span>DESCUBRE EL MENÚ</span>
-                <div class="mouse"></div>
+
+    <!-- Volcanic Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="loader-logo">FUEGO<span>RÁPIDO</span></h1>
+            <div class="loader-progress-container">
+                <div class="loader-progress"></div>
             </div>
+            <p class="loader-status">ENCENDIENDO MOTORES...</p>
+        </div>
+    </div>
+
+    <!-- Ambient Background -->
+    <div class="background-overlay">
+        <div class="fire-particles" id="fireParticles"></div>
+        <div class="smoke-overlay"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-ambient-glow"></div>
+        <div class="hero-content">
+            <div class="premium-badge">Gourmet Experience</div>
+            <h1 class="hero-title">FUEGO<span>RÁPIDO</span></h1>
+            <p class="hero-subtitle">DONDE EL SABOR SE ENCUENTRA CON LA LLAMA</p>
+            <a href="#burgers" class="hero-cta">EXPLORAR MENÚ</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
         </div>
     </section>
 
-    <div class="content-wrapper">
+    <!-- Content Area -->
+    <div class="main-container">
         <header id="site-header">
             <div class="logo">
                 <h1>FUEGO<span>RÁPIDO</span></h1>
@@ -43,431 +63,173 @@
         </header>
 
         <nav class="sticky-nav">
-        <ul class="nav-links">
-            <li><a href="#burgers" class="nav-link active">Burgers</a></li>
-            <li><a href="#hotdogs" class="nav-link">Hot Dogs</a></li>
-            <li><a href="#bebidas" class="nav-link">Bebidas</a></li>
-            <li><a href="#postres" class="nav-link">Postres</a></li>
-        </ul>
-    </nav>
+            <ul class="nav-links">
+                <li><a href="#burgers" class="nav-link">Burgers</a></li>
+                <li><a href="#hotdogs" class="nav-link">Hot Dogs</a></li>
+                <li><a href="#bebidas" class="nav-link">Bebidas</a></li>
+                <li><a href="#postres" class="nav-link">Postres</a></li>
+            </ul>
+        </nav>
 
-    <main class="menu-wrapper">
+        <main class="menu-wrapper">
+            <!-- Burgers Section -->
+            <section class="menu-category" id="burgers">
+                <div class="category-info">
+                    <h2 class="category-title">Burgers <span>Premium</span></h2>
+                    <div class="category-accent"></div>
+                </div>
+                <div class="menu-grid bento-grid">
+                    <article class="menu-item glass bento-item-large" data-category="featured">
+                        <div class="item-img-wrapper">
+                            <img src="img/double_burger.png" alt="Doble Infarto" class="item-img">
+                            <span class="item-tag">BEST SELLER</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Doble Infarto</h3>
+                                <span class="price">$22.000</span>
+                            </div>
+                            <p class="item-description">Doble carne de res madurada, queso cheddar fundido, tocineta ahumada y cebolla caramelizada al vino tinto.</p>
+                        </div>
+                    </article>
 
-        <!-- Hamburguesas -->
-        <section class="menu-category" id="burgers">
-            <div class="category-header">
-                <h2 class="category-title">Burgers Premium</h2>
-                <div class="title-line"></div>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Clásica" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Burger Clásica</h3>
+                                <span class="price">$15.000</span>
+                            </div>
+                            <p class="item-description">Carne artesanal, lechuga fresca, tomate y nuestra salsa secreta.</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=500&q=80" alt="Ranchera" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>La Ranchera</h3>
+                                <span class="price">$20.000</span>
+                            </div>
+                            <p class="item-description">Huevo frito, guacamole rústico y aros de cebolla crocantes.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Hot Dogs Section -->
+            <section class="menu-category" id="hotdogs">
+                <div class="category-info">
+                    <h2 class="category-title">Hot Dogs <span>Especiales</span></h2>
+                    <div class="category-accent"></div>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/jumbo_hotdog.png" alt="Jumbo" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Jumbo Mixto</h3>
+                                <span class="price">$20.000</span>
+                            </div>
+                            <p class="item-description">Salchicha gigante, pollo desmechado y explosión de salsas de la casa.</p>
+                        </div>
+                    </article>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/swiss_hotdog.png" alt="Suizo" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>El Suizo</h3>
+                                <span class="price">$16.000</span>
+                            </div>
+                            <p class="item-description">Inspiración europea con queso fundido y toques de maíz dulce.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Bebidas -->
+            <section class="menu-category" id="bebidas">
+                <div class="category-info">
+                    <h2 class="category-title">Bebidas <span>& Refresh</span></h2>
+                    <div class="category-accent"></div>
+                </div>
+                <div class="menu-grid compact-grid">
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper mini">
+                            <img src="img/oreo_milkshake.png" alt="Malteada" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Malteada Oreo</h3>
+                                <span class="price">$9.000</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper mini">
+                            <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=500&q=80" alt="Limonada" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Limonada Cerezada</h3>
+                                <span class="price">$6.000</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>FUEGO<span>RÁPIDO</span></h2>
+                    <p>Elevando el standard del sabor.</p>
+                </div>
+                <div class="footer-info">
+                    <div class="dev-tag">
+                        <span>CRAFTED BY</span>
+                        <strong>Samuel Portilla</strong>
+                    </div>
+                </div>
             </div>
-
-            <div class="menu-grid">
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="img/double_burger.png" alt="Hamburguesa Doble" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Doble Infarto</h3>
-                            <span class="price">$22.000</span>
-                        </div>
-                        <p class="item-description">Doble carne de res, doble queso, tocineta crujiente, cebolla
-                            caramelizada.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
-                            alt="Hamburguesa Clásica" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Burger Clásica</h3>
-                            <span class="price">$15.000</span>
-                        </div>
-                        <p class="item-description">Carne 150g, queso cheddar fundido, lechuga, tomate y salsa.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=500&q=80"
-                            alt="Hamburguesa Especial" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>La Ranchera</h3>
-                            <span class="price">$20.000</span>
-                        </div>
-                        <p class="item-description">Carne 150g, huevo frito, guacamole, americano, aros de cebolla.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80"
-                            alt="Hamburguesa con Papas" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Monster Smash</h3>
-                            <span class="price">$18.000</span>
-                        </div>
-                        <p class="item-description">Dos carnes smash, extra cheddar, pepinillos y salsa secreta.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://www.atrium.com.co/sites/default/files/images/productos/crispy-burger.jpg"
-                            alt="Hamburguesa Gourmet" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Pollo Crispy</h3>
-                            <span class="price">$16.000</span>
-                        </div>
-                        <p class="item-description">Pechuga apanada, mozzarella, lechuga crespa y salsa tártara.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Perros Calientes -->
-        <section class="menu-category" id="hotdogs">
-            <div class="category-header">
-                <h2 class="category-title">Hot Dogs Especiales</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="menu-grid">
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="img/classic_hotdog.png" alt="Perro Caliente Clásico" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Tradicional</h3>
-                            <span class="price">$12.000</span>
-                        </div>
-                        <p class="item-description">Salchicha premium, papas ripio, salsas y mostaza dulce.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="img/swiss_hotdog.png" alt="Perro Ranchero" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>El Suizo</h3>
-                            <span class="price">$16.000</span>
-                        </div>
-                        <p class="item-description">Salchicha suiza, mozzarella fundido, tocineta y maíz.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="img/jumbo_hotdog.png" alt="Perro Especial" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Jumbo Mixto</h3>
-                            <span class="price">$20.000</span>
-                        </div>
-                        <p class="item-description">Salchicha gigante, desmechada, pollo y full salsas.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="img/choripan.png" alt="Choripán" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Choripán</h3>
-                            <span class="price">$15.000</span>
-                        </div>
-                        <p class="item-description">Chorizo 100% cerdo, chimichurri casero en pan artesanal.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Bebidas -->
-        <section class="menu-category" id="bebidas">
-            <div class="category-header">
-                <h2 class="category-title">Bebidas & Licores</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="menu-grid">
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80"
-                            alt="Coca-Cola" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Coca-Cola</h3>
-                            <span class="price">$4.000</span>
-                        </div>
-                        <p class="item-description">400ml. Bebida tradicional refrescante y bien fría.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://pbs.twimg.com/media/Ddgpa0-X0AA-Kz3.jpg" alt="Manzana Postobón"
-                            class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Manzana Postobón</h3>
-                            <span class="price">$4.000</span>
-                        </div>
-                        <p class="item-description">400ml. Gaseosa rosada original con sabor a manzana.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3af06123769773.60f5a2e179f51.jpg"
-                            alt="Colombiana" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Colombiana</h3>
-                            <span class="price">$4.000</span>
-                        </div>
-                        <p class="item-description">400ml. Gaseosa de cola champaña.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=500&q=80"
-                            alt="Limonada Cerezada" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Limonada Cerezada</h3>
-                            <span class="price">$6.000</span>
-                        </div>
-                        <p class="item-description">Natural con toque de cerezas y hielo frapeado.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80"
-                            alt="Jugos Naturales" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Jugos Naturales</h3>
-                            <span class="price">$5.500</span>
-                        </div>
-                        <p class="item-description">Mora, Lulo, Mango, Maracuyá (leche +$1.000).</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="img/oreo_milkshake.png" alt="Malteada" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Malteada Oreo</h3>
-                            <span class="price">$9.000</span>
-                        </div>
-                        <p class="item-description">Vainilla, galleta oreo, chantilly y sirope.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_925722-MLM97577331285_112025-O.webp"
-                            alt="Club Colombia" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Cerveza Club Col.</h3>
-                            <span class="price">$5.500</span>
-                        </div>
-                        <p class="item-description">Dorada o Roja. Cerveza premium bien fría.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://lacaretalicores.com/cdn/shop/files/CERVEZA-AGUILA-LATON-473ml_47d6235d-1911-49ee-b2f1-a28116a10229.webp?v=1764735597&width=1000"
-                            alt="Cerveza Águila" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Cerveza Águila</h3>
-                            <span class="price">$5.000</span>
-                        </div>
-                        <p class="item-description">Tradicional, pídelas heladas.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://i.revistapym.com.co/old/2018/08/poker-lata.jpg" alt="Cerveza Poker"
-                            class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Cerveza Poker</h3>
-                            <span class="price">$5.000</span>
-                        </div>
-                        <p class="item-description">El amigo que une a los amigos.</p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Postres -->
-        <section class="menu-category" id="postres">
-            <div class="category-header">
-                <h2 class="category-title">Dulces & Postres</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="menu-grid">
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80"
-                            alt="Brownie con Helado" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Brownie Volcán</h3>
-                            <span class="price">$12.000</span>
-                        </div>
-                        <p class="item-description">Brownie tibio bañado en chocolate con helado de vainilla.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80"
-                            alt="Cheesecake" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Cheesecake Frutos</h3>
-                            <span class="price">$14.000</span>
-                        </div>
-                        <p class="item-description">Suave torta de queso real bañada en salsa de frutos rojos.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/2c/e3/1d/6d/churros-con-arequipe.jpg"
-                            alt="Churros" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Churros Arequipe</h3>
-                            <span class="price">$10.000</span>
-                        </div>
-                        <p class="item-description">6 churros crujientes con azúcar y una taza de arequipe.</p>
-                    </div>
-                </article>
-
-                <article class="menu-item glass">
-                    <div class="item-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?auto=format&fit=crop&w=500&q=80"
-                            alt="Copa Helado" class="item-img">
-                    </div>
-                    <div class="item-content">
-                        <div class="item-header">
-                            <h3>Copa de Helado</h3>
-                            <span class="price">$8.000</span>
-                        </div>
-                        <p class="item-description">Tres bolas de helado, galleta, salsa y crema chantilly.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-    </main>
+        </footer>
     </div>
 
-    <!-- Floating Action Button -->
-    <button class="fab-whatsapp" id="whatsappFab" aria-label="Abrir contacto">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-            <path
-                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
-        </svg>
+    <!-- WhatsApp Floating Trigger -->
+    <button class="fab-contact" id="whatsappFab">
+        <i data-lucide="message-circle"></i>
     </button>
 
-    <!-- Modal de Contacto -->
+    <!-- Modals -->
     <div class="modal-overlay" id="contactModal">
-        <div class="modal-box glass">
-            <button class="modal-close" id="closeModal" aria-label="Cerrar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
+        <div class="modal-card glass">
+            <button class="close-btn" id="closeModal"><i data-lucide="x"></i></button>
             <div class="modal-header">
-                <h2>FUEGO<span>RÁPIDO</span></h2>
-                <p>Haz tu pedido ahora</p>
+                <h2>CONTINUAR A <span>WHATSAPP</span></h2>
+                <p>Estás a un paso de encender tu sabor.</p>
             </div>
             <div class="modal-body">
-                <p>Por favor, escríbenos a nuestro WhatsApp indicando los platillos que deseas.</p>
-                <div class="modal-number">
-                    <span>Solo mensajes a:</span>
-                    <strong>311 251 8913</strong>
+                <div class="phone-badge">
+                    <i data-lucide="phone"></i>
+                    <span>311 251 8913</span>
                 </div>
+                <a href="https://wa.me/573112518913" class="modal-btn">ENVIAR PEDIDO</a>
             </div>
         </div>
     </div>
-
-    <!-- Product Modal -->
-    <div class="modal-overlay" id="productModal">
-        <div class="modal-box glass product-modal-box">
-            <button class="modal-close" id="closeProductModal" aria-label="Cerrar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="modal-product-img">
-                <img src="" id="pmImg" alt="Product Image">
-            </div>
-            <div class="modal-body product-modal-body">
-                <div class="pm-header">
-                    <h2 id="pmTitle">Título</h2>
-                    <span class="price pm-price" id="pmPrice">0</span>
-                </div>
-                <p id="pmDesc">Descripción detallada del producto aquí.</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <p style="color: var(--text-secondary); font-size: 0.85rem;">© 2026 Fuego Rápido. Todos los derechos
-                reservados.</p>
-            <div class="footer-dev">
-                <span>Desarrollado por</span>
-                <strong>Samuel Andrés Portilla Ardila</strong>
-                <span>Técnico en programación de software</span>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
-
 </html>
