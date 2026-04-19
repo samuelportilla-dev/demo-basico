@@ -10,21 +10,39 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP for Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
+    <div class="custom-cursor"></div>
     <div class="background-overlay"></div>
-
-    <header>
-        <div class="logo">
-            <h1>FUEGO<span>RÁPIDO</span></h1>
-            <p>Sabor que enciende tus sentidos</p>
+    
+    <section class="hero-section">
+        <div class="hero-bg-accent"></div>
+        <div class="hero-content">
+            <div class="logo-badge">Premium Experience</div>
+            <h1 class="hero-title">FUEGO<span>RÁPIDO</span></h1>
+            <p class="hero-subtitle">EL ARTE DE LA GASTRONOMÍA VOLCÁNICA</p>
+            <div class="hero-scroll-indicator">
+                <span>DESCUBRE EL MENÚ</span>
+                <div class="mouse"></div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <nav class="sticky-nav">
+    <div class="content-wrapper">
+        <header id="site-header">
+            <div class="logo">
+                <h1>FUEGO<span>RÁPIDO</span></h1>
+            </div>
+        </header>
+
+        <nav class="sticky-nav">
         <ul class="nav-links">
             <li><a href="#burgers" class="nav-link active">Burgers</a></li>
             <li><a href="#hotdogs" class="nav-link">Hot Dogs</a></li>
@@ -380,6 +398,7 @@
         </section>
 
     </main>
+    </div>
 
     <!-- Floating Action Button -->
     <button class="fab-whatsapp" id="whatsappFab" aria-label="Abrir contacto">
@@ -448,6 +467,10 @@
         </div>
     </footer>
 
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
     <script src="script.js"></script>
 </body>
 

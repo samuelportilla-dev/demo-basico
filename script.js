@@ -1,101 +1,125 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -50px 0px',
-        threshold: 0.1
-    };
+    // Register GSAP Plugins
+    gsap.registerPlugin(ScrollTrigger);
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add the animation class
-                entry.target.classList.add('scroll-visible');
-                // Unobserve after animating once
-                observer.unobserve(entry.target);
-            }
+    // 1. Custom Cursor Logic
+    const cursor = document.querySelector('.custom-cursor');
+    
+    document.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1,
+            ease: "power2.out"
         });
-    }, observerOptions);
-
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach((item, index) => {
-        item.style.animationDelay = `${(index % 2) * 0.1}s`; 
-        observer.observe(item);
     });
 
-    // Intersection Observer for Sticky Nav Active State
+    const interactiveElements = document.querySelectorAll('a, button, .menu-item');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            gsap.to(cursor, { scale: 3, backgroundColor: 'rgba(255, 77, 0, 0.2)', backdropFilter: 'blur(4px)', border: '1px solid var(--accent)' });
+        });
+        el.addEventListener('mouseleave', () => {
+            gsap.to(cursor, { scale: 1, backgroundColor: 'var(--accent)', backdropFilter: 'none', border: 'none' });
+        });
+    });
+
+    // 2. Initial Hero Animations
+    const tl = gsap.timeline();
+    tl.from('.hero-title span', { y: 100, opacity: 0, duration: 1.5, ease: "expo.out" })
+      .from('.hero-title', { scale: 1.2, duration: 2, ease: "expo.out" }, "-=1.5")
+      .from('.hero-subtitle', { opacity: 0, letterSpacing: "20px", duration: 1, ease: "power2.out" }, "-=1")
+      .from('.logo-badge', { y: -20, opacity: 0, duration: 1, ease: "back.out(1.7)" }, "-=1");
+
+    // 3. Scroll Animations for Categories
+    const categories = document.querySelectorAll('.menu-category');
+    categories.forEach(cat => {
+        gsap.from(cat.querySelector('.category-title'), {
+            scrollTrigger: {
+                trigger: cat,
+                start: "top 80%",
+            },
+            x: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(cat.querySelectorAll('.menu-item'), {
+            scrollTrigger: {
+                trigger: cat.querySelector('.menu-grid'),
+                start: "top 85%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power2.out"
+        });
+    });
+
+    // 4. Sticky Nav Active State Fix
     const sections = document.querySelectorAll('.menu-category');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    const navObserverOptions = {
-        root: null,
-        rootMargin: '-100px 0px -40% 0px', // Trigger when section hits middle-top of screen
-        threshold: 0
-    };
-
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove active from all links
-                navLinks.forEach(link => link.classList.remove('active'));
-                
-                // Add active to the corresponding link
-                const id = entry.target.getAttribute('id');
-                const matchingLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                if (matchingLink) {
-                    matchingLink.classList.add('active');
-                    // Ensure the link is scrolled into view (useful on mobile horizontal nav)
-                    matchingLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                }
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
             }
         });
-    }, navObserverOptions);
 
-    sections.forEach(section => {
-        navObserver.observe(section);
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
     });
 
-    // General Contact Modal Logic
+    // 5. Modal Logic Refresh
     const fabButton = document.getElementById('whatsappFab');
     const contactModal = document.getElementById('contactModal');
     const closeContactModal = document.getElementById('closeModal');
 
-    fabButton.addEventListener('click', () => { contactModal.classList.add('active'); });
-    closeContactModal.addEventListener('click', () => { contactModal.classList.remove('active'); });
-    contactModal.addEventListener('click', (e) => {
-        if (e.target === contactModal) contactModal.classList.remove('active');
-    });
+    const openModal = (modal) => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = (modal) => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    fabButton.addEventListener('click', () => openModal(contactModal));
+    closeContactModal.addEventListener('click', () => closeModal(contactModal));
+    contactModal.addEventListener('click', (e) => { if (e.target === contactModal) closeModal(contactModal); });
 
     // Product Modal Logic
     const productModal = document.getElementById('productModal');
     const closeProductModal = document.getElementById('closeProductModal');
-    const pmImg = document.getElementById('pmImg');
-    const pmTitle = document.getElementById('pmTitle');
-    const pmPrice = document.getElementById('pmPrice');
-    const pmDesc = document.getElementById('pmDesc');
+    const menuItems = document.querySelectorAll('.menu-item');
 
-    // Make every menu item clickable
     menuItems.forEach((item) => {
         item.addEventListener('click', () => {
-            // Extract info from DOM
             const img = item.querySelector('.item-img').src;
             const title = item.querySelector('h3').innerText;
             const price = item.querySelector('.price').innerText;
             const desc = item.querySelector('.item-description').innerText;
 
-            // Populate the modal
-            pmImg.src = img;
-            pmTitle.innerText = title;
-            pmPrice.innerText = price;
-            pmDesc.innerText = desc;
+            document.getElementById('pmImg').src = img;
+            document.getElementById('pmTitle').innerText = title;
+            document.getElementById('pmPrice').innerText = price;
+            document.getElementById('pmDesc').innerText = desc;
 
-            // Show modal
-            productModal.classList.add('active');
+            openModal(productModal);
         });
     });
 
-    closeProductModal.addEventListener('click', () => { productModal.classList.remove('active'); });
-    productModal.addEventListener('click', (e) => {
-        if (e.target === productModal) productModal.classList.remove('active');
-    });
+    closeProductModal.addEventListener('click', () => closeModal(productModal));
+    productModal.addEventListener('click', (e) => { if (e.target === productModal) closeModal(productModal); });
 });
