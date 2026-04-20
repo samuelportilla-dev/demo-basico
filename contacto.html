@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Fuego Rápido - Conecta con la Llama</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/api/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/api/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="contact-page">
+    <div class="custom-cursor"></div>
+
+    <!-- Persistent Global Header -->
+    <header class="global-header scrolled">
+        <div class="header-container">
+            <a href="index.html" class="nav-logo">FUEGO<span>RÁPIDO</span></a>
+            <nav class="main-nav">
+                <ul class="nav-links-desktop">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://wa.me/573112518913" class="btn-reservar">RESERVAR</a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="background-overlay">
+        <div class="fire-particles" id="fireParticles"></div>
+    </div>
+
+    <main class="contact-main">
+        <section class="contact-hero">
+            <span class="accent-tag">HABLEMOS</span>
+            <h1 class="hero-title">CONECTA CON LA <span>LLAMA</span></h1>
+            <p>¿Dudas, eventos o simplemente ganas de saludarnos? Estamos aquí.</p>
+        </section>
+
+        <div class="contact-grid">
+            <!-- Left Side: Info & Map -->
+            <div class="contact-info-panel">
+                <div class="info-card glass">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <h3>UBICACIÓN</h3>
+                        <p>Av. 0 # 10-25, Barrio La Riviera, Cúcuta</p>
+                    </div>
+                </div>
+                <div class="info-card glass">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <h3>WHATSAPP DIRECTO</h3>
+                        <p>+57 311 251 8913</p>
+                    </div>
+                </div>
+                <div class="info-card glass">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <h3>EMAIL</h3>
+                        <p>hola@fuegorapido.com</p>
+                    </div>
+                </div>
+
+                <!-- Styled Map Placeholder (Iframe) -->
+                <div class="map-wrapper glass">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.123456789!2d-72.50!3d7.89!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66459f42586a11%3A0x123456789!2sLa%20Riviera%2C%20C%C3%BAcuta!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco" 
+                        width="100%" height="300" style="border:0; filter: grayscale(1) invert(0.9);" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <section class="contact-form-wrapper glass">
+                <form id="contactForm" class="premium-form">
+                    <div class="form-group">
+                        <label>NOMBRE COMPLETO</label>
+                        <input type="text" placeholder="Ej. Samuel Portilla" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CORREO ELECTRÓNICO</label>
+                        <input type="email" placeholder="samuel@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ASUNTO</label>
+                        <select>
+                            <option>Reserva de Mesa</option>
+                            <option>Evento Privado</option>
+                            <option>Sugerencia</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>MENSAJE</label>
+                        <textarea rows="5" placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">ENVIAR MENSAJE</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Mini FAQ Bento -->
+        <section class="quick-faq">
+            <h2 class="section-title">Preguntas <span>Frecuentes</span></h2>
+            <div class="faq-bento">
+                <div class="faq-item glass">
+                    <h4><i data-lucide="truck"></i> ¿Hacen domicilios?</h4>
+                    <p>Sí, cubrimos todo el área metropolitana de Cúcuta vía WhatsApp con entrega prioritaria.</p>
+                </div>
+                <div class="faq-item glass">
+                    <h4><i data-lucide="leaf"></i> ¿Hay opciones veganas?</h4>
+                    <p>Contamos con nuestra "Veggie Fire" de lentejas ahumadas y ensaladas gourmet a la brasa.</p>
+                </div>
+                <div class="faq-item glass">
+                    <h4><i data-lucide="credit-card"></i> ¿Reciben tarjetas?</h4>
+                    <p>Sí, aceptamos todas las tarjetas de crédito, débito, Nequi, Daviplata y pagos sin contacto.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-bottom">
+        <div class="dev-tag" style="margin-bottom: 2rem; opacity: 0.8;">
+            <span style="font-size: 0.6rem; letter-spacing: 3px; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">CRAFTED BY</span>
+            <strong style="color: white; font-size: 1.1rem; letter-spacing: 1px;">Samuel Portilla Dev</strong>
+            <p style="font-size: 0.7rem; color: var(--magma); margin-top: 0.5rem; font-weight: 700; letter-spacing: 1px;">SITIO WEB DE DEMOSTRACIÓN PROFESIONAL</p>
+        </div>
+        <p>© 2026 Fuego Rápido - Todos los derechos reservados</p>
+        <p style="margin-top: 1rem;"><a href="terms.html" style="text-decoration: underline; font-size: 0.7rem; opacity: 0.6;">Términos y Condiciones</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

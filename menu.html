@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuego Rápido | Experiencia Gastronómica</title>
+    <meta name="description" content="Menú digital premium de Fuego Rápido. Sabores que encienden tus sentidos.">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Icons & Libraries -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="menu-page">
+    <!-- Custom Premium Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Volcanic Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="loader-logo">FUEGO<span>RÁPIDO</span></h1>
+            <div class="loader-progress-container">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persistent Global Header -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="nav-logo">FUEGO<span>RÁPIDO</span></a>
+            <nav class="main-nav">
+                <ul class="nav-links-desktop">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link active">Menú</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://wa.me/573112518913" class="btn-reservar">PEDIR AHORA</a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ambient Background -->
+    <div class="background-overlay">
+        <div class="fire-particles" id="fireParticles"></div>
+        <div class="smoke-overlay"></div>
+    </div>
+
+    <!-- Page Title Section -->
+    <section class="page-intro">
+        <div class="intro-content">
+            <span class="intro-tag">CARTA DE SELECCIÓN</span>
+            <h1 class="hero-title">NUESTRO <span>MENÚ</span></h1>
+        </div>
+    </section>
+
+    <!-- Content Area -->
+    <div class="main-container">
+
+        <nav class="sticky-nav">
+            <ul class="nav-links">
+                <li><a href="#burgers" class="nav-link">Burgers</a></li>
+                <li><a href="#hotdogs" class="nav-link">Hot Dogs</a></li>
+                <li><a href="#bebidas" class="nav-link">Bebidas</a></li>
+                <li><a href="#postres" class="nav-link">Postres</a></li>
+            </ul>
+        </nav>
+
+        <main class="menu-wrapper">
+            <!-- Burgers Section -->
+            <section class="menu-category" id="burgers">
+                <div class="category-info">
+                    <h2 class="category-title">Burgers <span>Premium</span></h2>
+                    <div class="category-accent"></div>
+                </div>
+                <div class="menu-grid bento-grid">
+                    <article class="menu-item glass bento-item-large" data-category="featured">
+                        <div class="item-img-wrapper">
+                            <img src="img/double_burger.png" alt="Doble Infarto" class="item-img">
+                            <span class="item-tag">BEST SELLER</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Doble Infarto</h3>
+                                <span class="price">$38.500</span>
+                            </div>
+                            <p class="item-description">La joya de la corona. Una arquitectura de sabor diseñada para los paladares más exigentes que no temen al exceso.</p>
+                            
+                            <ul class="item-specs">
+                                <li><i data-lucide="flame"></i> Doble carne de res Brangus (360g)</li>
+                                <li><i data-lucide="beef"></i> Tocineta ahumada en madera de manzano</li>
+                                <li><i data-lucide="layers"></i> Cuádruple queso Cheddar fundido</li>
+                                <li><i data-lucide="chef-hat"></i> Cebolla caramelizada al Brandy</li>
+                                <li><i data-lucide="droplets"></i> Salsa "Fuego Secreto" de la casa</li>
+                            </ul>
+
+                            <div class="chef-note">
+                                <p><strong>Nota del Chef:</strong> "Recomendamos término medio para apreciar la jugosidad extrema de la mezcla Brangus."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/burger_brangus.png" alt="Burger Brangus" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Burger Brangus</h3>
+                                <span class="price">$29.000</span>
+                            </div>
+                            <p class="item-description">La versión esencial de nuestra carne premium. Brangus certificado, queso americano y nuestra salsa artesanal.</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/burger_ranchera.png" alt="Ranchera" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>La Ranchera</h3>
+                                <span class="price">$32.000</span>
+                            </div>
+                            <p class="item-description">Huevo frito, guacamole rústico y aros de cebolla crocantes acompañando nuestra carne Brangus.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Hot Dogs Section -->
+            <section class="menu-category" id="hotdogs">
+                <div class="category-info">
+                    <h2 class="category-title">Hot Dogs <span>Especiales</span></h2>
+                    <div class="category-accent"></div>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/jumbo_hotdog.png" alt="Jumbo" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Jumbo Mixto</h3>
+                                <span class="price">$28.000</span>
+                            </div>
+                            <p class="item-description">Salchicha gigante, pollo desmechado y explosión de salsas de la casa.</p>
+                        </div>
+                    </article>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/swiss_hotdog.png" alt="Suizo" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>El Suizo</h3>
+                                <span class="price">$24.000</span>
+                            </div>
+                            <p class="item-description">Inspiración europea con queso fundido y toques de maíz dulce.</p>
+                        </div>
+                    </article>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/choripan.png" alt="Choripán" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Choripán de la Casa</h3>
+                                <span class="price">$26.500</span>
+                            </div>
+                            <p class="item-description">Chorizo artesanal de la región, chimichurri secreto y pan de masa madre tostado a la brasa.</p>
+                        </div>
+                    </article>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper">
+                            <img src="img/classic_hotdog.png" alt="Clásico" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Hot Dog Clásico</h3>
+                                <span class="price">$19.500</span>
+                            </div>
+                            <p class="item-description">La esencia de Fuego Rápido: salchicha premium, papas ripio y nuestras salsas tradicionales.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Bebidas -->
+            <section class="menu-category" id="bebidas">
+                <div class="category-info">
+                    <h2 class="category-title">Bebidas <span>& Refresh</span></h2>
+                    <div class="category-accent"></div>
+                </div>
+                <div class="menu-grid compact-grid">
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper mini">
+                            <img src="img/oreo_milkshake.png" alt="Malteada" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Malteada Oreo</h3>
+                                <span class="price">$16.000</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="menu-item glass">
+                        <div class="item-img-wrapper mini">
+                            <img src="img/Limonada cerezada.png" alt="Limonada Cerezada" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-meta">
+                                <h3>Limonada Cerezada</h3>
+                                <span class="price">$12.500</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>FUEGO<span>RÁPIDO</span></h2>
+                    <p>Elevando el standard del sabor.</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-address">
+                        <strong style="color: var(--magma); font-size: 0.7rem; letter-spacing: 2px;">VISÍTANOS</strong>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Av. 0 # 10-25, Barrio La Riviera, Cúcuta</p>
+                    </div>
+                    <div class="dev-tag" style="margin-top: 2rem;">
+                        <span>CRAFTED BY</span>
+                        <strong>Samuel Portilla</strong>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; border-top: 1px solid var(--glass-border); padding-top: 2rem;">
+                <p style="font-size: 0.7rem; opacity: 0.5;">© 2026 Fuego Rápido. <a href="terms.html" style="text-decoration: underline;">Términos y Condiciones</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- WhatsApp Floating Trigger -->
+    <button class="fab-contact" id="whatsappFab">
+        <i data-lucide="message-circle"></i>
+    </button>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-card glass">
+            <button class="close-btn" id="closeModal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>CONTINUAR A <span>WHATSAPP</span></h2>
+                <p>Estás a un paso de encender tu sabor.</p>
+            </div>
+            <div class="modal-body">
+                <div class="phone-badge">
+                    <i data-lucide="phone"></i>
+                    <span>311 251 8913</span>
+                </div>
+                <a href="https://wa.me/573112518913" class="modal-btn">ENVIAR PEDIDO</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Detail Detail Sheet -->
+    <div class="detail-modal-overlay" id="detailModal">
+        <div class="detail-sheet">
+            <button class="sheet-close" id="closeDetail"><i data-lucide="x"></i></button>
+            <div class="detail-header">
+                <img src="" alt="Detail Image" id="detailImg">
+            </div>
+            <div class="detail-body">
+                <span class="detail-price" id="detailPrice"></span>
+                <h2 class="detail-title" id="detailTitle"></h2>
+                
+                <p class="detail-desc" id="detailDesc"></p>
+                
+                <h4 style="font-size: 0.7rem; letter-spacing: 3px; color: var(--magma); text-transform: uppercase; margin-bottom: 1.5rem;">Ingredientes Clave</h4>
+                <ul class="detail-specs-list" id="detailSpecs">
+                    <!-- Dynamic -->
+                </ul>
+
+                <div class="pairing-box">
+                    <h4>Sugerencia de Maridaje</h4>
+                    <div class="pairing-content">
+                        <i data-lucide="beer" id="pairingIcon"></i>
+                        <p id="pairingText">Acompaña este plato con nuestra Cerveza Artesanal Roja para resaltar los ahumados.</p>
+                    </div>
+                </div>
+
+                <button class="btn-reservar" style="width: 100%; padding: 1.5rem; font-size: 1rem;" onclick="location.href='https://wa.me/573112518913'">PEDIR AHORA</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Fuego Rápido - Maestros de la Brasa</title>
+
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="about-page">
+    <div class="custom-cursor"></div>
+
+    <!-- Volcanic Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="loader-logo">FUEGO<span>RÁPIDO</span></h1>
+            <div class="loader-progress-container">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persistent Global Header -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="nav-logo">FUEGO<span>RÁPIDO</span></a>
+            <nav class="main-nav">
+                <ul class="nav-links-desktop">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li><a href="nosotros.html" class="nav-link active">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="menu.html" class="btn-reservar">PEDIR AHORA</a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="background-overlay">
+        <div class="fire-particles" id="fireParticles"></div>
+    </div>
+
+    <!-- Page Intro -->
+    <section class="about-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/Header Nosotros.png') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="about-hero-content">
+            <span class="intro-tag">NUESTRA ESENCIA</span>
+            <h1 class="hero-title">MAESTROS DEL <span>FUEGO</span></h1>
+            <p>Una historia forjada entre carbón, pasión y el arte de la brasa perfecta.</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Our Story Section -->
+        <section class="our-story">
+            <div class="story-container">
+                <div class="story-text">
+                    <h2 class="section-title">El Origen de la <span>Llama</span></h2>
+                    <p>Fuego Rápido nació bajo un concepto simple pero ambicioso: devolverle a la cocina urbana su
+                        elemento más puro. No solo cocinamos con fuego; lo entendemos, lo respetamos y lo convertimos en
+                        nuestro aliado secreto.</p>
+                    <p>Desde nuestra apertura en 2026, hemos buscado la perfección en cada sellado, seleccionando
+                        únicamente cortes certificados y Pan Artesanal de Masa Madre para crear una experiencia que
+                        trasciende lo convencional.</p>
+
+                    <div class="story-mission">
+                        <div class="mission-col">
+                            <h4>Misión</h4>
+                            <p>Elevar la cultura del fuego, sirviendo platos honestos que reconecten al comensal con el
+                                sabor rústico y gourmet.</p>
+                        </div>
+                        <div class="mission-col">
+                            <h4>Visión</h4>
+                            <p>Ser reconocidos como el templo de la brasa líder en la región, innovando sin perder la
+                                esencia tradicional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-gallery">
+                    <div class="gallery-item-main">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
+                            alt="Restaurante Interior">
+                    </div>
+                    <div class="gallery-sub">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80"
+                            alt="Cooking with Fire">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="about-values">
+            <div class="values-grid">
+                <div class="value-card glass">
+                    <div class="value-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>Integridad</h3>
+                    <p>Ingredientes 100% orgánicos y procesos transparentes en cocina abierta.</p>
+                </div>
+                <div class="value-card glass">
+                    <div class="value-icon"><i data-lucide="Zap"></i></div>
+                    <h3>Pasión</h3>
+                    <p>La energía del fuego en cada preparación es nuestro motor diario.</p>
+                </div>
+                <div class="value-card glass">
+                    <div class="value-icon"><i data-lucide="award"></i></div>
+                    <h3>Excelencia</h3>
+                    <p>No aceptamos nada menos que la perfección en cada plato que servimos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ritual Section -->
+        <section class="ritual-section">
+            <div class="section-intro-centered">
+                <span class="accent-tag">NUESTRA TÉCNICA</span>
+                <h2 class="section-title">El Ritual del <span>Fuego</span></h2>
+            </div>
+            <div class="ritual-grid">
+                <div class="ritual-step">
+                    <span class="ritual-num">01</span>
+                    <h3>La Selección</h3>
+                    <p>Solo cortes con marmoleo grado 4+, seleccionados a mano por nuestro maestro carnicero.</p>
+                </div>
+                <div class="ritual-step">
+                    <span class="ritual-num">02</span>
+                    <h3>El Sello</h3>
+                    <p>Sellado a 400°C en piedra volcánica para encapsular los jugos y el sabor natural.</p>
+                </div>
+                <div class="ritual-step">
+                    <span class="ritual-num">03</span>
+                    <h3>El Aroma</h3>
+                    <p>Ahumado final con madera de cerezo y nogal por 15 minutos antes de servir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="time-year">2023</div>
+                    <div class="time-content">
+                        <h3>LA CHISPA</h3>
+                        <p>Samuel Portilla inicia experimentos con ahumados artesanales en un garaje de Cúcuta.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-year">2024</div>
+                    <div class="time-content">
+                        <h3>EL PRIMER FUEGO</h3>
+                        <p>Abrimos nuestro primer food-truck, convirtiéndonos en un fenómeno local en un mes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-year">2025</div>
+                    <div class="time-content">
+                        <h3>RECONOCIMIENTO</h3>
+                        <p>Ganadores del premio "Innovación Gastronómica" por nuestra Doble Infarto.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-year">2026</div>
+                    <div class="time-content">
+                        <h3>NUEVA ERA</h3>
+                        <p>Lanzamiento del concepto actual: Fuego Rápido - El Templo Gourmet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges Section -->
+        <section class="quality-badges">
+            <div class="badges-wrapper">
+                <div class="badge-item">
+                    <i data-lucide="award"></i>
+                    <span>TOP 10 BURGERS 2026</span>
+                </div>
+                <div class="badge-item">
+                    <i data-lucide="star"></i>
+                    <span>EXCELLENCE CERTIFIED</span>
+                </div>
+                <div class="badge-item">
+                    <i data-lucide="apple"></i>
+                    <span>INGREDIENTES ORGÁNICOS</span>
+                </div>
+                <div class="badge-item">
+                    <i data-lucide="flame"></i>
+                    <span>AL CALOR DEL CARBÓN</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="section-intro-centered">
+                <span class="accent-tag">EQUIPO ELITE</span>
+                <h2 class="section-title">Los Guardianes de la <span>Brasa</span></h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img-wrapper">
+                        <img src="img/German Suarez.png"
+                            alt="German Suarez">
+                    </div>
+                    <div class="member-info">
+                        <h3>German Suarez</h3>
+                        <span>Chef Ejecutivo & Fundador</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img-wrapper">
+                        <img src="img/Andres Rojas.png"
+                            alt="Andres Rojas">
+                    </div>
+                    <div class="member-info">
+                        <h3>Andrés Rojas</h3>
+                        <span>Pit Master (Maestro Ahumador)</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img-wrapper">
+                        <img src="img/Laura Castro.png"
+                            alt="Laura Castro">
+                    </div>
+                    <div class="member-info">
+                        <h3>Laura Castro</h3>
+                        <span>Maestra Panadera</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="nosotros-cta">
+            <div class="cta-box glass">
+                <h2>¿LISTO PARA VIVIR LA <span>EXPERIENCIA?</span></h2>
+                <p>Nuestras brasas ya están encendidas. Solo faltas tú.</p>
+                <a href="menu.html" class="cta-primary">EXPLORAR LA CARTA</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-landing-grid">
+            <div class="footer-col">
+                <h2>FUEGO<span>RÁPIDO</span></h2>
+                <p>Donde el sabor se encuentra con la llama.</p>
+            </div>
+            <div class="footer-col">
+                <h3>VISÍTANOS</h3>
+                <p>Av. 0 # 10-25, Barrio La Riviera, Cúcuta</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>HORARIOS</h3>
+                <p>Mar - Jue: 5pm - 10pm</p>
+                <p>Vie - Dom: 5pm - 12am</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Fuego Rápido - Samuel Portilla Dev</p>
+            <p style="margin-top: 1rem;"><a href="terms.html"
+                    style="text-decoration: underline; font-size: 0.7rem; opacity: 0.6;">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

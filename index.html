@@ -4,24 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuego Rápido | Experiencia Gastronómica</title>
-    <meta name="description" content="Menú digital premium de Fuego Rápido. Sabores que encienden tus sentidos.">
+    <title>Fuego Rápido | Restaurante Gourmet</title>
+    <meta name="description" content="Bienvenido a Fuego Rápido. El lugar donde la brasa y la pasión crean el sabor definitivo.">
     
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     
-    <!-- Icons & Libraries -->
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
-<body>
-    <!-- Custom Premium Cursor -->
+<body class="home-page">
     <div class="custom-cursor"></div>
+    <div class="scroll-progress"></div>
 
     <!-- Volcanic Loader -->
     <div id="loader">
@@ -30,206 +29,226 @@
             <div class="loader-progress-container">
                 <div class="loader-progress"></div>
             </div>
-            <p class="loader-status">ENCENDIENDO MOTORES...</p>
         </div>
     </div>
 
-    <!-- Ambient Background -->
+    <!-- Persistent Global Header -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="nav-logo">FUEGO<span>RÁPIDO</span></a>
+            <nav class="main-nav">
+                <ul class="nav-links-desktop">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="menu.html" class="btn-reservar">PEDIR AHORA</a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
     <div class="background-overlay">
         <div class="fire-particles" id="fireParticles"></div>
         <div class="smoke-overlay"></div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-ambient-glow"></div>
-        <div class="hero-content">
-            <div class="premium-badge">Gourmet Experience</div>
-            <h1 class="hero-title">FUEGO<span>RÁPIDO</span></h1>
-            <p class="hero-subtitle">DONDE EL SABOR SE ENCUENTRA CON LA LLAMA</p>
-            <a href="#burgers" class="hero-cta">EXPLORAR MENÚ</a>
+    <!-- Landing Hero -->
+    <section class="landing-hero">
+        <div class="hero-bg-media">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=90" alt="Restaurante Background" class="hero-video-fallback">
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content-landing">
+            <span class="entrance-anim">EST. 2026</span>
+            <h1 class="entrance-anim">EL ARTE DE LA <span>BRASA</span></h1>
+            <p class="entrance-anim">SABORES QUE NACEN EN EL CORAZÓN DEL FUEGO</p>
+            <div class="hero-buttons entrance-anim">
+                <a href="menu.html" class="cta-primary">VER EL MENÚ</a>
+                <a href="#about" class="cta-secondary">NUESTRA HISTORIA</a>
+            </div>
         </div>
     </section>
 
-    <!-- Content Area -->
-    <div class="main-container">
-        <header id="site-header">
-            <div class="logo">
-                <h1>FUEGO<span>RÁPIDO</span></h1>
+    <main>
+        <!-- Passion Section -->
+        <section class="passion-section" id="about">
+            <div class="passion-container">
+                <div class="passion-image">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Chef at Fire" class="img-reveal">
+                    <div class="experience-tag">10 AÑOS DE MAESTRÍA</div>
+                </div>
+                <div class="passion-text">
+                    <h2 class="section-title">Pasión en cada <span>Llama</span></h2>
+                    <p class="section-p">En Fuego Rápido no solo cocinamos, transformamos ingredientes frescos en experiencias memorables. Nuestra técnica de ahumado y sellado a altas temperaturas garantiza una jugosidad inigualable.</p>
+                    <ul class="passion-features">
+                        <li><i data-lucide="check-circle"></i> Carne 100% Angus Certificada</li>
+                        <li><i data-lucide="check-circle"></i> Pan Artesanal de Masa Madre</li>
+                        <li><i data-lucide="check-circle"></i> Salsas de Autor Secretas</li>
+                    </ul>
+                </div>
             </div>
-        </header>
+        </section>
 
-        <nav class="sticky-nav">
-            <ul class="nav-links">
-                <li><a href="#burgers" class="nav-link">Burgers</a></li>
-                <li><a href="#hotdogs" class="nav-link">Hot Dogs</a></li>
-                <li><a href="#bebidas" class="nav-link">Bebidas</a></li>
-                <li><a href="#postres" class="nav-link">Postres</a></li>
-            </ul>
-        </nav>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">AÑOS DE EXPERIENCIA</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="25">0</span>
+                    <span class="stat-label">RECETAS DE AUTOR</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">MILES DE CLIENTES</span>
+                </div>
+            </div>
+        </section>
 
-        <main class="menu-wrapper">
-            <!-- Burgers Section -->
-            <section class="menu-category" id="burgers">
-                <div class="category-info">
-                    <h2 class="category-title">Burgers <span>Premium</span></h2>
-                    <div class="category-accent"></div>
+        <!-- Specials Showcase -->
+        <section class="specials-showcase">
+            <div class="section-intro-centered">
+                <span class="accent-tag">SELECCIÓN DEL CHEF</span>
+                <h2 class="section-title">Especialidades de la <span>Casa</span></h2>
+            </div>
+            <div class="specials-gallery">
+                <div class="special-card">
+                    <div class="special-img">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" alt="Smoked Ribs">
+                    </div>
+                    <div class="special-info">
+                        <h3>Costillas Ahumadas</h3>
+                        <p>12 horas de ahumado con leña de cerezo y salsa bourbon.</p>
+                    </div>
                 </div>
-                <div class="menu-grid bento-grid">
-                    <article class="menu-item glass bento-item-large" data-category="featured">
-                        <div class="item-img-wrapper">
-                            <img src="img/double_burger.png" alt="Doble Infarto" class="item-img">
-                            <span class="item-tag">BEST SELLER</span>
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>Doble Infarto</h3>
-                                <span class="price">$22.000</span>
-                            </div>
-                            <p class="item-description">Doble carne de res madurada, queso cheddar fundido, tocineta ahumada y cebolla caramelizada al vino tinto.</p>
-                        </div>
-                    </article>
-
-                    <article class="menu-item glass">
-                        <div class="item-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Clásica" class="item-img">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>Burger Clásica</h3>
-                                <span class="price">$15.000</span>
-                            </div>
-                            <p class="item-description">Carne artesanal, lechuga fresca, tomate y nuestra salsa secreta.</p>
-                        </div>
-                    </article>
-
-                    <article class="menu-item glass">
-                        <div class="item-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&w=500&q=80" alt="Ranchera" class="item-img">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>La Ranchera</h3>
-                                <span class="price">$20.000</span>
-                            </div>
-                            <p class="item-description">Huevo frito, guacamole rústico y aros de cebolla crocantes.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Hot Dogs Section -->
-            <section class="menu-category" id="hotdogs">
-                <div class="category-info">
-                    <h2 class="category-title">Hot Dogs <span>Especiales</span></h2>
-                    <div class="category-accent"></div>
-                </div>
-                <div class="menu-grid">
-                    <article class="menu-item glass">
-                        <div class="item-img-wrapper">
-                            <img src="img/jumbo_hotdog.png" alt="Jumbo" class="item-img">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>Jumbo Mixto</h3>
-                                <span class="price">$20.000</span>
-                            </div>
-                            <p class="item-description">Salchicha gigante, pollo desmechado y explosión de salsas de la casa.</p>
-                        </div>
-                    </article>
-                    <article class="menu-item glass">
-                        <div class="item-img-wrapper">
-                            <img src="img/swiss_hotdog.png" alt="Suizo" class="item-img">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>El Suizo</h3>
-                                <span class="price">$16.000</span>
-                            </div>
-                            <p class="item-description">Inspiración europea con queso fundido y toques de maíz dulce.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Bebidas -->
-            <section class="menu-category" id="bebidas">
-                <div class="category-info">
-                    <h2 class="category-title">Bebidas <span>& Refresh</span></h2>
-                    <div class="category-accent"></div>
-                </div>
-                <div class="menu-grid compact-grid">
-                    <article class="menu-item glass">
-                        <div class="item-img-wrapper mini">
-                            <img src="img/oreo_milkshake.png" alt="Malteada" class="item-img">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>Malteada Oreo</h3>
-                                <span class="price">$9.000</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="menu-item glass">
-                        <div class="item-img-wrapper mini">
-                            <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=500&q=80" alt="Limonada" class="item-img">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-meta">
-                                <h3>Limonada Cerezada</h3>
-                                <span class="price">$6.000</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2>FUEGO<span>RÁPIDO</span></h2>
-                    <p>Elevando el standard del sabor.</p>
-                </div>
-                <div class="footer-info">
-                    <div class="dev-tag">
-                        <span>CRAFTED BY</span>
-                        <strong>Samuel Portilla</strong>
+                <div class="special-card">
+                    <div class="special-img">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Volcanic Bowl">
+                    </div>
+                    <div class="special-info">
+                        <h3>Volcanic Bowl</h3>
+                        <p>Mezcla explosiva de vegetales a la brasa y proteína premium.</p>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <!-- WhatsApp Floating Trigger -->
-    <button class="fab-contact" id="whatsappFab">
-        <i data-lucide="message-circle"></i>
-    </button>
-
-    <!-- Modals -->
-    <div class="modal-overlay" id="contactModal">
-        <div class="modal-card glass">
-            <button class="close-btn" id="closeModal"><i data-lucide="x"></i></button>
-            <div class="modal-header">
-                <h2>CONTINUAR A <span>WHATSAPP</span></h2>
-                <p>Estás a un paso de encender tu sabor.</p>
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="section-intro-centered">
+                <span class="accent-tag">VOCES DE LA CRÍTICA</span>
+                <h2 class="section-title">Lo que dicen de <span>Nosotros</span></h2>
             </div>
-            <div class="modal-body">
-                <div class="phone-badge">
-                    <i data-lucide="phone"></i>
-                    <span>311 251 8913</span>
+            <div class="testimonials-grid">
+                <div class="testimonial-card-premium glass">
+                    <i data-lucide="quote" class="quote-mini"></i>
+                    <p>"Fuego Rápido es un templo a la cocina de origen. La mejor hamburguesa que he probado en años."</p>
+                    <div class="author-info">
+                        <strong>MARCO ANTONY</strong>
+                        <span>Crítico Gastronómico</span>
+                    </div>
                 </div>
-                <a href="https://wa.me/573112518913" class="modal-btn">ENVIAR PEDIDO</a>
+                <div class="testimonial-card-premium glass">
+                    <i data-lucide="quote" class="quote-mini"></i>
+                    <p>"El ahumado en madera de manzano eleva sus platos a una categoría superior. Altamente recomendado."</p>
+                    <div class="author-info">
+                        <strong>ELENA GÓMEZ</strong>
+                        <span>Chef de Estrellas</span>
+                    </div>
+                </div>
+                <div class="testimonial-card-premium glass">
+                    <i data-lucide="quote" class="quote-mini"></i>
+                    <p>"Una explosión de texturas. Su Doble Infarto es una obra maestra de la arquitectura culinaria."</p>
+                    <div class="author-info">
+                        <strong>JULIÁN RÍOS</strong>
+                        <span>Food Blogger Senior</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery/Categories Section -->
+        <section class="featured-categories">
+            <div class="categories-grid-landing">
+                <div class="category-card-landing">
+                    <div class="cat-img-wrapper">
+                        <img src="img/double_burger.png" alt="Burgers">
+                    </div>
+                    <div class="cat-info-landing">
+                        <h3>BURGERS</h3>
+                        <a href="menu.html#burgers">VER MÁS <i data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card-landing">
+                    <div class="cat-img-wrapper">
+                        <img src="img/jumbo_hotdog.png" alt="HotDogs">
+                    </div>
+                    <div class="cat-info-landing">
+                        <h3>HOT DOGS</h3>
+                        <a href="menu.html#hotdogs">VER MÁS <i data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card-landing">
+                    <div class="cat-img-wrapper">
+                        <img src="img/oreo_milkshake.png" alt="Postres">
+                    </div>
+                    <div class="cat-info-landing">
+                        <h3>DULCES</h3>
+                        <a href="menu.html#postres">VER MÁS <i data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        <!-- Final Experience CTA -->
+        <section class="final-cta">
+            <div class="cta-content-wrapper glass">
+                <span class="accent-tag">VIVE LA EXPERIENCIA</span>
+                <h2 class="section-title">¿Listo para el <span>Sabor Supremo?</span></h2>
+                <p>Nuestra brasa te está esperando. No te conformes con menos.</p>
+                <div class="cta-actions">
+                    <a href="menu.html" class="cta-primary">PEDIR AHORA</a>
+                    <a href="contacto.html" class="cta-secondary">DONDE ESTAMOS</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-landing-grid">
+            <div class="footer-col">
+                <h2>FUEGO<span>RÁPIDO</span></h2>
+                <p>Donde el sabor se encuentra con la llama.</p>
+            </div>
+            <div class="footer-col">
+                <h3>VISÍTANOS</h3>
+                <p>Av. 0 # 10-25, Barrio La Riviera, Cúcuta</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>HORARIOS</h3>
+                <p>Mar - Jue: 5pm - 10pm</p>
+                <p>Vie - Dom: 5pm - 12am</p>
             </div>
         </div>
-    </div>
+        <div class="footer-bottom">
+            <p>© 2026 Fuego Rápido - Samuel Portilla Dev</p>
+            <p style="margin-top: 1rem;"><a href="terms.html" style="text-decoration: underline; font-size: 0.7rem; opacity: 0.6;">Términos y Condiciones</a></p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
+
 </html>
